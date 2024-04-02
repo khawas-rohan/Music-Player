@@ -1,2 +1,5 @@
 /*
   Access-Control-Allow-Origin: *
+  
+/songs/*
+  Access-Control-Allow-Origin: *
