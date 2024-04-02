@@ -36,8 +36,8 @@ function changeBoxColors(box) {
 
 async function getSongs(folder) {
   currFolder = folder;
-  let a = await fetch(`http://127.0.0.1:5500/${folder}/`); //link here
-  // let a = await fetch(`/${folder}/`); //link here
+  // let a = await fetch(`http://127.0.0.1:5500/${folder}/`); //link here
+  let a = await fetch(`/${folder}/`); //link here
   // let a = await fetch(`https://kaizen-music.netlify.app/${folder}/`); //link here
   let response = await a.text();
   let div = document.createElement("div");
@@ -150,8 +150,8 @@ const playMusic = (track, pause = false) => {
 
 // displaying album-----
 async function displayAlbum() {
-  let a = await fetch(`http://127.0.0.1:5500/songs/`); //link here
-  // let a = await fetch(`/songs/`); 
+  // let a = await fetch(`http://127.0.0.1:5500/songs/`); //link here
+  let a = await fetch(`/songs/`); 
   // let a = await fetch(`https://kaizen-music.netlify.app/songs/`); 
   let response = await a.text();
   let div = document.createElement("div");
@@ -164,8 +164,8 @@ async function displayAlbum() {
 
     if (e.href.includes("/songs/")) {
       let folder = e.href.split("/").slice(-1)[0];
-      let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`); //link here
-      // let a = await fetch(`/songs/${folder}/info.json`); //link here
+      // let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`); //link here
+      let a = await fetch(`/songs/${folder}/info.json`); //link here
       // let a = await fetch(`https://kaizen-music.netlify.app/songs/${folder}/info.json`); //link here
       let response = await a.json();
       cardContainer.innerHTML =
