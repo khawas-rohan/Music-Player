@@ -198,7 +198,7 @@ async function displayAlbum() {
 }
 
 async function main() {
-  await getSongs("hello");
+  await getSongs("songs/vibes");
   playMusic(songs[0], true);
 
   // Displaying Album------------------------------------------------------------------------------------
