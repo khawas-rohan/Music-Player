@@ -46,7 +46,7 @@ async function getSongs(folder) {
   songs = [];
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
-    if (element.href.endsWith(".mp3")) {
+    if (element.href.endsWith(".mp3"))  {
       songs.push(element.href.split(`/${folder}/`)[1]);
       
     }
@@ -162,7 +162,7 @@ async function displayAlbum() {
   for (let index = 0; index < array.length; index++) {
     const e = array[index];
 
-    if (e.href.includes("/songs/")) {
+    if (e.href.includes("/songs/") &&!e.href.includes(".htaccess")){
       let folder = e.href.split("/").slice(-1)[0];
       // let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`); //link here
       let a = await fetch(`/songs/${folder}/info.json`); //link here
